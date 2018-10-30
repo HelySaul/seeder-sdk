@@ -27,7 +27,18 @@ class Database {
     return dbConnection
   }
 
-  static async updateDb(couchDb, databaseName, object, partial) {
+  /*
+    Usage:
+
+    const updatedData = await Database.updateDb(
+      this.couchDb,
+      'smashdbbackup',
+      { _id: '55d2e81a0958a1c76bbded72c2000f1d', age: 41 },
+      true
+    )
+    res.status(200).send(updatedData.data)
+   */
+  static async updateDb(couchDb, databaseName, object, partial = false) {
     if (!object._id) {
       throw new Error('Field "_id" is required')
     }
