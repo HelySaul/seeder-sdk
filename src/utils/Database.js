@@ -27,7 +27,7 @@ class Database {
     return dbConnection
   }
 
-  async updateDb(couchDb, databaseName, object, partial) {
+  static async updateDb(couchDb, databaseName, object, partial) {
     if (!object._id) {
       throw new Error('Field "_id" is required')
     }
