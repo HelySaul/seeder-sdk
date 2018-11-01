@@ -16,7 +16,6 @@ class GoogleStorage {
           reject(err)
         })
         stream.on('finish', () => {
-          logger.info(`file "${fileName}" uploaded successfully.`)
           bucketFile.cloudStorageObject = fileName
           //return bucketFile.makePublic().then(() => {
           //bucketFile.gcsUrl = `https://storage.googleapis.com/smash-profile-file/${userId}/{fileName}`
