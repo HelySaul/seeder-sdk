@@ -11,6 +11,7 @@ import History from './utils/History'
 import ApiError from './utils/ApiError'
 import Handler from './utils/Handler'
 import Notification from './utils/Notification'
+import GoogleStorage from './utils/GoogleStorage'
 
 export {
   SDK,
@@ -25,5 +26,6 @@ export {
   History,
   ApiError,
   Handler,
-  Notification
+  Notification,
+  GoogleStorage
 }
