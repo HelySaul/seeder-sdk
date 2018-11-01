@@ -1,7 +1,6 @@
 import logger from './logger'
 
 class GoogleStorage {
-
   static async uploadFile(bucket, userId, fileName, file) {
     return new Promise((resolve, reject) => {
       try {
@@ -16,7 +15,8 @@ class GoogleStorage {
           logger.error('Error uploading file : ' + JSON.stringify(err))
           reject(err)
         })
-        stream.on('finish', par1 => {
+        stream.on('finish', () => {
+          logger.info(`file "${fileName}" uploaded successfully.`)
           bucketFile.cloudStorageObject = fileName
           //return bucketFile.makePublic().then(() => {
           //bucketFile.gcsUrl = `https://storage.googleapis.com/smash-profile-file/${userId}/{fileName}`
@@ -30,7 +30,6 @@ class GoogleStorage {
       }
     })
   }
-
 }
 
 export default GoogleStorage
