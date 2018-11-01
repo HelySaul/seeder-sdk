@@ -2,7 +2,7 @@ import logger from './logger'
 
 class GoogleStorage {
 
-  async uploadFile(bucket, userId, fileName, file) {
+  static async uploadFile(bucket, userId, fileName, file) {
     return new Promise((resolve, reject) => {
       try {
         const bucketFile = bucket.file(`${userId}/${fileName}`)
