@@ -9,11 +9,11 @@ import fileUpload from 'express-fileupload'
 const app = express()
 const token = new Token()
 
-const whitelist = ['http://192.168.86.22:4200', 'http://192.168.86.35:4200']    
+const whitelist = ['http://192.168.86.22:4200', 'http://192.168.86.35:4200', 'https://developferacode.smashtechnology.com']    
 const options = {
   origin: function (origin, callback) {
     logger.info(origin)
-    
+
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true)
     } else {
