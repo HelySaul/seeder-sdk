@@ -25,7 +25,7 @@ const options = {
 app
   .use(morgan(Env.HTTP_LOG_CONFIG, { stream: logger.stream }))
 
-  .use(cors(options))    
+  .use(cors())    
 
   /*
   .use((req, res, next) => {
