@@ -28,6 +28,9 @@ app
   //.use(cors())    
 
   .use((req, res, next) => {
+    logger.info('SDK Origin -> ' + req.headers.origin)
+
+
     // To use with websocket, uncomment this line below and comment the next line
     res.header('Access-Control-Allow-Origin', req.headers.origin)
     //res.header('Access-Control-Allow-Origin', '*')
