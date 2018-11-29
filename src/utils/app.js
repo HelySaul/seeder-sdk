@@ -13,7 +13,7 @@ app
   .use(morgan(Env.HTTP_LOG_CONFIG, { stream: logger.stream }))
   .use((req, res, next) => {
     // To use with websocket, uncomment this line below and comment the next line
-    res.header('Access-Control-Allow-Origin', req.headers.origin)
+    res.header('Access-Control-Allow-Origin', req.headers.origin + ', http://192.168.86.22:4200')
     //res.header('Access-Control-Allow-Origin', '*')
     res.header('Access-Control-Allow-Credentials', true)
     res.header('Access-Control-Allow-Methods', 'POST,GET,OPTIONS,PUT,DELETE')
