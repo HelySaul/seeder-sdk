@@ -11,7 +11,7 @@ class Token {
   httpValidate(req, res, next) {
     const excluded = [
       '/module/system/authenticate/',
-      '/module/system/ecommerce/new-user'
+      '/module/system/website/new-user'
     ]
 
     if (excluded.indexOf(req.url) > -1 || req.method === 'OPTIONS')
